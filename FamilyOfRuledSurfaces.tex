@@ -504,7 +504,7 @@ The above theorem is particularly useful in answering questions about the rigidi
 	
 \end{corollary}
 
-\section{A family of semi-rigid rings}
+\section{Some results on semi-rigid rings}
 
 \begin{definition}
 	A ring $B$ is semi-rigid if $ML(B) = \ker D$ for any $D \in \lnd(B) \setminus\{0\}$. 
@@ -554,7 +554,9 @@ https://www.sciencedirect.com/science/article/pii/S002186930300067X
 	Let $D$ be any $\bk$-derivation of a finitely generated normal domain over $\bk$, and let $A = \ker D$. If $\trdeg_\bk A = 2$, then $\ker D$ is a finitely generated $\bk$-algebra.  
 \end{lemma}
 
-\begin{theorem}\label{trdeg3UFDnotRat}
+The following Proposition is a special case of Proposition 3.9 in \cite{lndsStructure}. We include the proof of this special case, as the preprint of \cite{lndsStructure} has not yet been published. 
+
+\begin{proposition}\label{trdeg3UFDnotRat}
 	Suppose $\bk$ is algebraically closed of characteristic 0 and $B$ is ring with the following properties:
 	
 	(1) $B$ is a $\bk$-affine $UFD$
@@ -571,7 +573,7 @@ https://www.sciencedirect.com/science/article/pii/S002186930300067X
 	
 	(c) $B$ is semi-rigid. 
 	
-\end{theorem}
+\end{proposition}
 
 \begin{proof}
 	If $B$ is rigid, the only locally nilpotent derivation is $D = 0$, so $\ker D = B$ is not $\bk^{[2]}$, is rigid, and hence is semi-rigid. So, suppose $B$ is not rigid. Let $D_B \in \lnd(B)$ be nonzero and let $A = \ker D_B$. Then $A$ has transcendence degree 2 over $\bk$, and since $B$ is a UFD, $A$ is also a UFD. 
@@ -582,6 +584,8 @@ https://www.sciencedirect.com/science/article/pii/S002186930300067X
 	
 	For (c), note that $B = A_\alpha^{[1]}$ for some $\alpha \in A$. By part (a) of Lemma \ref{rigidLocalization}, we have that $A_\alpha$ is rigid, and by Theorem of \ref{semirigidityTheorem}, $B = A_\alpha^{[1]}$ is semi-rigid.      		
 \end{proof}
+
+
 
 \section{Applications to Pham-Brieskorn Varieties}
 
