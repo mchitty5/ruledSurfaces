@@ -504,7 +504,7 @@ The above theorem is particularly useful in answering questions about the rigidi
 	
 \end{corollary}
 
-\section{A family of semi-rigid rings}
+\section{Some results on semi-rigid rings}
 
 \begin{definition}
 	A ring $B$ is semi-rigid if $ML(B) = \ker D$ for any $D \in \lnd(B) \setminus\{0\}$. 
@@ -554,7 +554,9 @@ https://www.sciencedirect.com/science/article/pii/S002186930300067X
 	Let $D$ be any $\bk$-derivation of a finitely generated normal domain over $\bk$, and let $A = \ker D$. If $\trdeg_\bk A = 2$, then $\ker D$ is a finitely generated $\bk$-algebra.  
 \end{lemma}
 
-\begin{theorem}\label{trdeg3UFDnotRat}
+The following Proposition is a special case of Proposition 3.9 in \cite{lndsStructure}. We include the proof of this special case, as the preprint of \cite{lndsStructure} has not yet been published. 
+
+\begin{proposition}\label{trdeg3UFDnotRat}
 	Suppose $\bk$ is algebraically closed of characteristic 0 and $B$ is ring with the following properties:
 	
 	(1) $B$ is a $\bk$-affine $UFD$
@@ -571,7 +573,7 @@ https://www.sciencedirect.com/science/article/pii/S002186930300067X
 	
 	(c) $B$ is semi-rigid. 
 	
-\end{theorem}
+\end{proposition}
 
 \begin{proof}
 	If $B$ is rigid, the only locally nilpotent derivation is $D = 0$, so $\ker D = B$ is not $\bk^{[2]}$, is rigid, and hence is semi-rigid. So, suppose $B$ is not rigid. Let $D_B \in \lnd(B)$ be nonzero and let $A = \ker D_B$. Then $A$ has transcendence degree 2 over $\bk$, and since $B$ is a UFD, $A$ is also a UFD. 
@@ -582,6 +584,8 @@ https://www.sciencedirect.com/science/article/pii/S002186930300067X
 	
 	For (c), note that $B = A_\alpha^{[1]}$ for some $\alpha \in A$. By part (a) of Lemma \ref{rigidLocalization}, we have that $A_\alpha$ is rigid, and by Theorem of \ref{semirigidityTheorem}, $B = A_\alpha^{[1]}$ is semi-rigid.      		
 \end{proof}
+
+
 
 \section{Applications to Pham-Brieskorn Varieties}
 
@@ -649,7 +653,7 @@ Let $B = B_{a_1, ..., a_n} = \Comp[x_1, ..., x_n]$ be a Pham-Brieskorn ring wher
 
 We recall a few facts about the Fermat hypersurfaces. 
 
-\begin{definition} The Fermat hypersurface $F_d$ of degree $d$ in $\PP^{n-1} = \Proj \Comp[X_1, ..., X_n]$ is the projective variety defined by the homogeneous equation $X_1^d + X_2^d + ... + X_n^d$.  
+\begin{definition} The Fermat hypersurface $F_d$ of degree $d$ in $\proj^{n-1} = \Proj \Comp[X_1, ..., X_n]$ is the projective variety defined by the homogeneous equation $X_1^d + X_2^d + ... + X_n^d$.  
 \end{definition}
 
 \begin{remark} The Fermat hypersurfaces $F_d$ are smooth for all $d \geq 1$ and all $n \geq 2$. 
@@ -658,10 +662,10 @@ We recall a few facts about the Fermat hypersurfaces.
 	If $d > n-1$, then $F_d$ is not ruled. In particular, when $d=n$, $F_d$ is a K3 variety, and when $d > n$, $F_d$ is of general type. This can be found in the discussion in Example 8.20.3 in Chapter 2 of \cite{Hartshorne}. 
 \end{remark}	
 
-\begin{theorem} \label{mainResult} Let $B = B_{a_1,a_2,...,a_n}$ be the Pham-Brieskorn variety with $a_1 = a_2 = ... = a_n = d$ where $d \geq n$. Then $B$ is rigid. 
-\end{theorem}
+\begin{corollary} Let $B = B_{a_1,a_2,...,a_n}$ be the Pham-Brieskorn variety with $a_1 = a_2 = ... = a_n = d$ where $d \geq n$. Then $B$ is rigid. 
+\end{corollary}
 
-\begin{proof} Observe first that $\type(B) = 0$ and so $\Integ(A) = \Integ(B)$. It follows from Theorem \ref{mainResult} that if $\Proj(B) = F_d$ is not rigid, then $F_d$ is ruled. But by Remark \ref{notRuled}, this is impossible. 
+\begin{proof} Observe first that $\type(B) = 0$ and so $\Integ(A) = \Integ(B)$. It follows from Proposition \ref{mainResult} that if $\Proj(B) = F_d$ is not rigid, then $F_d$ is ruled. But by Remark \ref{notRuled}, this is impossible. 
 \end{proof}
 
 We obtain the following Corollary in the 3-dimensional case. 
