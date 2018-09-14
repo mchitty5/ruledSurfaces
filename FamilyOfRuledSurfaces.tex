@@ -1,0 +1,694 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsmath,amsfonts,euscript,amscd,amsthm,amssymb,upref,graphics,color}
+\usepackage[all]{xy}
+\usepackage[normalem]{ulem} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\swapnumbers
+
+\theoremstyle{plain}
+
+\newcommand{\red}{\color{red}}
+\newcommand{\cyan}{\color{cyan}}
+
+
+
+
+\newtheorem{theorem}[subsection]{Theorem}
+\newtheorem*{thmnonumber}{Theorem}
+\newtheorem{proposition}[subsection]{Proposition}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{corollary}[subsection]{Corollary}
+\newtheorem{conjecture}[subsection]{Conjecture}
+\newtheorem*{cornonumber}{Corollary}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{sheafificationThm}[subsection]{Sheafification Theorem}
+
+\newtheorem{subtheorem}{Theorem}[subsection]
+\newtheorem{subproposition}[subtheorem]{Proposition}
+\newtheorem{sublemma}[subtheorem]{Lemma}
+\newtheorem{subcorollary}[subtheorem]{Corollary}
+\newtheorem{subnothing}[subtheorem]{}
+
+\theoremstyle{definition}
+
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{definitions}[subsection]{Definitions}
+\newtheorem*{definonumber}{Definition}
+\newtheorem{nothing}[subsection]{}
+\newtheorem{nothing*}[subsection]{}
+\newtheorem{example}[subsection]{Example}
+\newtheorem{examples}[subsection]{Examples}
+\newtheorem*{exnonumber}{Example}
+\newtheorem*{quesnonumber}{Question}
+\newtheorem{question}{Question}
+\newtheorem{problem}[subsection]{Problem}	
+\newtheorem{exercise}[subsection]{Exercise}	
+\newtheorem*{solution}{Solution}	
+\newtheorem{notation}[subsection]{Notation}
+\newtheorem{notations}[subsection]{Notations}
+\newtheorem{step}{Step}
+\newtheorem*{claim}{Claim}
+\newtheorem{assumptions}[subsection]{Assumptions}
+\newtheorem{remark}[subsection]{Remark}
+\newtheorem{remarks}[subsection]{Remarks}
+
+\newtheorem{subdefinition}[subtheorem]{Definition}
+\newtheorem{subnotation}[subtheorem]{Notation}
+\newtheorem{subnotations}[subtheorem]{Notations}
+\newtheorem{subexample}[subtheorem]{Example}
+\newtheorem{subnothing*}[subtheorem]{}
+
+\newtheorem*{warning}{Warning}
+\newtheorem*{smallexample}{Example}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{enumerata}%
+{\begin{enumerate}
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand{\theenumii}{\roman{enumii}}}{\end{enumerate}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\input macros
+\DeclareMathOperator*{\Oplus}{\oplus}
+\newcommand{\coker}{		\operatorname{{\rm coker}}}
+\newcommand{\Aut}{		\operatorname{{\rm Aut}}}
+\newcommand{\Spec}{		\operatorname{{\rm Spec}}}
+\newcommand{\Proj}{		\operatorname{{\rm Proj}}}
+\newcommand{\Nil}{		\operatorname{{\rm Nil}}}
+\newcommand{\Der}{		\operatorname{{\rm Der}}}
+\newcommand{\rank}{		\operatorname{{\rm rank}}}
+\newcommand{\Reg}{		\operatorname{{\rm Reg}}}
+\newcommand{\height}{		\operatorname{{\rm ht}}}
+\newcommand{\supp}{		\operatorname{{\rm supp}}}
+\newcommand{\image}{	\operatorname{{\rm im}}}
+\newcommand{\ord}{		\operatorname{{\rm ord}}}
+\newcommand{\bideg}{	\operatorname{{\rm bideg}}}
+\newcommand{\trdeg}{	\operatorname{{\rm trdeg}}}
+\newcommand{\Frac}{		\operatorname{{\rm Frac}}}
+\newcommand{\Char}{		\operatorname{{\rm char}}}
+\newcommand{\Span}{		\operatorname{{\rm Span}}}
+\newcommand{\Sing}{		\operatorname{{\rm Sing}}}
+\newcommand{\Pic}{		\operatorname{{\rm Pic}}}
+\newcommand{\Cl}{		\operatorname{{\rm Cl}}}
+\newcommand{\dom}{		\operatorname{{\rm dom}}}
+\newcommand{\codom}{		\operatorname{{\rm codom}}}
+\renewcommand{\div}{	\operatorname{{\rm div}}}
+\newcommand{\id}{		\operatorname{{\rm id}}}
+\newcommand{\ob}{		\operatorname{{\rm ob}}}
+\newcommand{\lcm}{		\operatorname{{\rm lcm}}}
+\newcommand{\type}{		\operatorname{{\rm type}}}
+\newcommand{\Hom}{		\operatorname{{\rm Hom}}}
+\newcommand{\Image}{		\operatorname{{\rm Im}}}
+
+
+\newcommand{\Set}{		\operatorname{{\rm\bf Set}}}
+\newcommand{\PtSet}{		\operatorname{{\rm\bf PtSet}}}
+\newcommand{\Top}{		\operatorname{{\rm\bf Top}}}
+\newcommand{\Grp}{		\operatorname{{\rm\bf Grp}}}
+\newcommand{\CRng}{		\operatorname{{\rm\bf CRng}}}
+\newcommand{\Gr}{		\operatorname{{\rm\bf Gr}}}
+
+\newcommand{\lb}{\langle}
+\newcommand{\rb}{\rangle}
+\newcommand{\gr}{\operatorname{{\rm\bf gr}}}
+
+
+\newcommand{\Mod}[1]{\mbox{\rm ${#1}$-\bf Mod}}
+\newcommand{\setspec}[2]{\big\{\,#1\, \mid \,#2\, \big\}}
+
+\newcommand{\powerset}{\raisebox{\depth}{\Large $\wp$}}
+
+\newlength{\mylength}
+\settowidth{\mylength}{$\,$}
+\setlength{\mylength}{1.45\mylength}
+\newcommand{\notdiv}{\not\hspace{\mylength}\mid}
+
+\newcommand{\epi}{\twoheadrightarrow}
+\newcommand{\overepi}[1]{\overset{ #1 }{\epi}}
+\newcommand{\monic}{\rightarrowtail}
+\newcommand{\overmonic}[1]{\overset{ #1 }{\monic}}
+
+\newcommand{\Integ}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Nat}{\ensuremath{\mathbb{N}}}
+\newcommand{\Rat}{\ensuremath{\mathbb{Q}}}
+\newcommand{\Comp}{\ensuremath{\mathbb{C}}}
+\newcommand{\Reals}{\ensuremath{\mathbb{R}}}
+\newcommand{\aff}{\ensuremath{\mathbb{A}}}
+\newcommand{\proj}{\ensuremath{\mathbb{P}}}
+\newcommand{\bk}{{\ensuremath{\rm \bf k}}}
+\newcommand{\ck}{{\bar{\bk}}}
+\newcommand{\kk}[1]{\bk^{[#1]}}
+
+\newcommand{\Aeul}{\EuScript{A}}
+\newcommand{\Beul}{\EuScript{B}}
+\newcommand{\Ceul}{\EuScript{C}}
+\newcommand{\Deul}{\EuScript{D}}
+\newcommand{\Eeul}{\EuScript{E}}
+\newcommand{\Feul}{\EuScript{F}}
+\newcommand{\Geul}{\EuScript{G}}
+\newcommand{\Heul}{\EuScript{H}}
+\newcommand{\Keul}{\EuScript{K}}
+\newcommand{\Oeul}{\EuScript{O}}
+\newcommand{\Peul}{\EuScript{P}}
+\newcommand{\Seul}{\EuScript{S}}
+
+\newcommand{\Acal}{\mathcal{A}}
+\newcommand{\Bcal}{\mathcal{B}}
+\newcommand{\Ccal}{\mathcal{C}}
+\newcommand{\Dcal}{\mathcal{D}}
+\newcommand{\Ecal}{\mathcal{E}}
+\newcommand{\Fcal}{\mathcal{F}}
+\newcommand{\Gcal}{\mathcal{G}}
+
+\newcommand{\ggoth}{\mathfrak{g}}
+\newcommand{\pgoth}{\mathfrak{p}}
+\newcommand{\Pgoth}{\mathfrak{P}}
+\newcommand{\qgoth}{\mathfrak{q}}
+\newcommand{\Qgoth}{\mathfrak{Q}}
+\newcommand{\mgoth}{\mathfrak{m}}
+\newcommand{\Mgoth}{\mathfrak{M}}
+
+\newcommand{\Abf}{\mathbf{A}}
+\newcommand{\Bbf}{\mathbf{B}}
+\newcommand{\Cbf}{\mathbf{C}}
+\newcommand{\Dbf}{\mathbf{D}}
+\newcommand{\Ebf}{\mathbf{E}}
+
+\newcommand{\TX}{\mathbf{T}_{\!X}}
+\newcommand{\PP}{\mbox{\boldmath $\Peul$}}
+\newcommand{\pp}{\mbox{\scriptsize\boldmath $\Peul$}}
+\newcommand{\SH}{\mbox{\boldmath $\Seul$}}
+\newcommand{\sh}{\mbox{\scriptsize\boldmath $\Seul$}}
+\newcommand{\PPP}{\mathbb{P}}
+\newcommand{\SSS}{\mathbb{S}}
+%\newcommand{\AAA}{\mathbb{A}}
+%\newcommand{\BBB}{\mathbb{B}}
+\newcommand{\AAA}{\Cbf}
+\newcommand{\BBB}{\Abf}
+
+\newcommand{\dirlim}{\varinjlim}
+\newcommand{\lnd}{\operatorname{{\rm LND}}}
+\newcommand{\hlnd}{\operatorname{{\rm HLND}}}
+\newcommand{\klnd}{\operatorname{{\rm KLND}}}
+
+
+\newcommand{\ssi}{\Leftrightarrow}
+\newcommand{\isom}{\cong}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\emptyset}{\varnothing}
+\newcommand{\OSheaf}{\operatorname{\mathcal O}}
+
+
+
+
+\newcommand{\rien}[1]{}
+
+\newenvironment{Enumerate}[1]%
+{\begin{enumerate}\setlength{\itemsep}{#1}}{\end{enumerate}}
+
+\newenvironment{Itemize}[1]%
+{\begin{itemize}\setlength{\itemsep}{#1}}{\end{itemize}}
+
+
+
+\addtolength{\textheight}{30mm}
+\setlength{\textwidth}{17.5cm}
+\addtolength{\topmargin}{-15mm}
+\addtolength{\oddsidemargin}{-2.5cm}
+\addtolength{\evensidemargin}{-2.5cm}
+
+\raggedbottom
+
+\CompileMatrices
+
+\begin{document}
+\renewcommand{\baselinestretch}{1.07}
+
+
+
+%%%%%%	TOPMATTER:   %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{A family of ruled surfaces and an application to Pham-Brieskorn Varieties}
+
+
+\author{Michael Chitayat and Daniel Daigle}
+
+\maketitle
+  
+\vfuzz=2pt
+
+
+\section{Preliminaries}
+
+Throughout this work, all rings are commutative and have a multiplicative identity which we denote by $1$. All ring homomorphisms map 1 to 1. If $B$ is a ring, then we denote its group of units by $B^*$. If $B$ is an integral domain, its fraction field will be denoted $\Frac B$. If $b \in B$, then $\lb b \rb \lhd B$ is the ideal of $B$ generated by $B$.  
+
+A subring $A \subset B$ is \textit{factorially closed in B} if for all $x,y \in B$, we have the implication $xy \in A \Rightarrow x,y \in A$. 
+
+A derivation $D : B \to B$ is \textit{locally nilpotent} if for all $b \in D$ there exists an $n \in \Nat$ such that $D^n(b) = 0$.  The set of locally nilpotent derivations is denoted $\lnd(B)$. The set of homogeneous locally nilpotent derivations is denoted $\hlnd(B)$.  
+
+A derivation $D$ is \textit{irreducible} if $D(B) \subset \lb b \rb \Rightarrow b \in B^*$.    
+
+\begin{subsection}\  	
+	Let $B$ be an integral domain of characteristic zero, let $D : B \to B$ be a derivation, and let $A = \ker D$. The following facts are well-known. 
+	
+	(1) If $D$ is locally nilpotent, then $A$ is a factorially closed subring of $B$. 
+	
+	(2) If $D$ is locally nilpotent and nonzero, then $\trdeg_A(B) = 1$ and $\Frac B  = (\Frac A)^{(1)}$. 
+	
+	(3) Let $S \subset B$ be a multiplicative subset of $B$ containing $1$. The map $S^{-1}D : S^{-1} B \to S^{-1} B$ defined by $D(\frac{b}{s}) = \frac{sD(b)-bD(s)}{s^2}$ is a derivation satisfying:
+	
+	\quad (a) the derivation $S^{-1}D$ is locally nilpotent if and only if $D$ is locally nilpotent and $S \subset A$
+	
+	\quad (b) if $S \subset A$, then $\ker S^{-1}D = S^{-1}A$ and $S^{-1}A \cap B = A$
+\end{subsection}
+
+\section{Derivations of G-graded rings}
+
+\begin{definition} Let B be an integral domain and let $G$ be a totally ordered abelian group. A function $\deg : B \to G \cup \{-\infty\}$  is a degree function if:
+
+$(i) \deg(b) = -\infty \iff b = 0$
+
+$(ii) \deg(fg) = \deg f + \deg g$ for each nonzero $f,g \in B$
+
+$(iii) \deg(f + g) \leq \max\{\deg f, \deg g\}$ for all $f,g \in B$
+\end{definition}
+
+\begin{definition}
+Let G be an abelian group, and let B be a ring. A \textit{$G$-grading of $B$} is a family $\{B_g\}_{g \in G}$ of subgroups of $B$ such that:
+
+$(i) B = \bigoplus\limits_{g \in G} B_g$
+
+$(ii) B_g B_h \subset B_{g+h}$ for all $g, h \in G$
+
+\end{definition}
+
+Suppose $B = \bigoplus\limits_{i \in G} B_i$ is a $G$-graded ring. Let $A$ be a subring of $B$.  
+
+\begin{definitions} 
+	
+\begin{itemize}
+	
+	\item An element $b \in B_g \setminus\{0\}$ is \textit{homogeneous of degree $g$}. The element 0 is homogeneous of degree $-\infty$. 
+	
+	\item A derivation $D \in \Der(B)$ is  \textit{homogeneous of degree $h \in G$} if $D(B_g) \subset B_{g+h}$ for all $g \in G$. The set of homogeneous locally nilpotent derivations of $B$ is denoted $\hlnd B$. 
+	
+	\item Given $g \in G$, we define $A_g = A \cap B_g$. We will say that $A$ is $G$-graded if $A = \bigoplus\limits_{g \in G} A_g$ is graded. Note that we will be particularly interested in the case where $A = \ker D$ for some $D \in \hlnd(B)$. 
+	
+	\item Define $G(A)$ to be the subgroup of $G$ generated by the set $\{g \in G : A_g \neq 0\}$. 
+	
+	\item In the special case where $G = \Integ$, and $B_i = 0$ for all $i < 0$, we will say that $B$ is $\Nat$-graded and write $B = \bigoplus\limits_{i \in \Nat} B_i$. 
+	
+	
+\end{itemize}
+
+
+
+\end{definitions}  
+\begin{remarks}
+	\begin{itemize}
+		\item Every $b \in B$ can be written uniquely as $b = \sum \limits_{i=1}^n b_i$ where each $b_i \in B_i$ for some $i \in G$. 		
+		 
+	\end{itemize} 	
+\end{remarks}
+
+We include the following useful lemma. 
+
+\begin{lemma}\label{homoLoc}
+	Let $B = \bigoplus\limits_{i \in \Nat} B_i$ be an $\Nat$-graded integral domain. Let $H$ be the set of nonzero homogeneous elements of $B$. Let $S$ be any multiplicatively closed subset of $H$. Then $S^{-1}B$ is a $\Integ$-graded rings where $\deg(\frac{b}{s}) = \deg(b) - \deg(s)$. Moreover if $D \in \hlnd(B)$ has degree $d$,  and $S \subset \ker D$, then $S^{-1}D \in \hlnd(S^{-1}B)$ and also has degree $d$.  
+\end{lemma}
+
+\section{The type of an $\Nat$-graded ring}
+
+The following is a variation of what appears in 1.3, 1.4, and 1.5 of \cite{Daigle2007}.   
+
+Let $B = \bk^{[n]}$ be a polynomial ring in $n$-variables and let $\ggoth$ be a grading of $B$. If the graded ring $(B, \ggoth) = \bigoplus\limits_{i \in \Nat} B_i$ satisfies $B_0 = \bk$, we will call $\ggoth$ a \textit{positive grading}. 
+	
+\begin{definitions}	
+	Let $S = (a_1, a_2, ..., a_n) \in (\Nat \setminus\{0\})^n$ be an $n$-tuple of positive integers. We define the following values:
+	
+	\begin{itemize}
+		\item Define $d = \gcd(\{a_1,...,a_n\})$ which we will also denote by $\gcd(S)$ 
+		\item Define $L = \lcm(\{a_1, ..., a_n\})$ which we will also denote by $\lcm(S)$
+		\item Define $\bar{S} = (L/a_1, L/a_2,..., L/a_n)$ and denote $L/a_i$ by $\bar{a_i}$. 
+		\item Define $S_j = \{a_1, ..., a_{j-1}, \hat{a_j}, a_{j+1}, ..., a_n\}$.
+		
+		\item Define $\Sigma_n$ to be the group of permutations acting on $S$.  
+	\end{itemize}
+
+	as well as the following terms:
+	
+	\begin{itemize}
+		\item If $d = 1$, we will say that $S$ is \textit{normal}. Otherwise, we can define $S'$ to be the set $\{\frac{a_1}{d}, ... , \frac{a_n}{d}\}$. Then, $S'$ is normal and we will call $S'$ the \textit{normalization of $S$}.
+		
+		
+		
+		\item Define the \textit{type} of $S$ as follows:
+		
+		\begin{equation}
+		\type(S) = 
+		\begin{cases}
+		|\{j \in \{0,1,2,...,n\} : \gcd(S_j) > 1\}| & \text{if S is normal}\\
+		\type(S') & \text{if S is not normal}
+		\end{cases}
+		\end{equation}
+	\end{itemize}  
+
+	  	
+\end{definitions}
+
+\begin{remark}
+	
+	If $|S| = n$ then $\type : (\Nat \setminus \{0\})^n \to \{0,1,...,n\}$. 
+\end{remark}
+\begin{remark}
+	For all $\sigma \in \Sigma$, $\type(S) = \type(\sigma S) $. 
+\end{remark}
+
+\begin{example} We calculate the type of a few sets:
+	
+	$\type(\{m,m,m,m\}) = 0 \  \forall m \in \Nat \setminus \{0\}$
+	
+	$\type(\{m,m,n,n\}) = 0 \  \forall m,n \in \Nat \setminus \{0\}$
+	
+	
+\end{example}
+
+The following will be useful as it characterizes the families of Pham-Brieskorn varieties that appear in the hypotheses of Theorem 7.2 (a) and (b) of \cite{daigle:hal-01691491} as Type 1 and Type 2 varieties respectively.  
+
+\begin{proposition}\label{equivalentType}
+	Suppose $S = (a_1, a_2, ..., a_n)$ is normal, $L = \lcm (S), d = \gcd(S)$.
+	
+	(a) The following are equivalent. 
+	
+	\quad $(i) \gcd(S_j) > 1$
+	
+	\quad $(ii)$ there exists a prime  $p_j$ and an integer $l_j$  such that $p_j^{l_j} | \bar{a_j}$ and $p_j^{l_j} \not{|} \bar{a_i}$ for all $i \neq j$.
+	
+	(b) If $i \neq j$ and $\gcd(S_i)>1$,$\gcd(S_j)>1$, then $p_i$ and $p_j$ as in part (a) are distinct.    
+\end{proposition}
+
+\begin{proof}
+	
+	
+	Write $L = p_1^{\alpha_1}p_2^{\alpha_2}...p_s^{\alpha_s}$. Let $d_j = \gcd(S_j)$ and let $p_j$ be some prime factor of $d_j$. Note that $p_j | L$. Then, 
+	$$d_j > 1  \iff  p_j | a_i \text{ for all $i \neq j$ and $p_j \not{|} a_j$} \iff \bar{a_j} = L / a_j \text{ satisfies  $p_j^{\alpha_j} | \bar{a_j}$ and $p_j^{\alpha_j} \not{|} \bar{a_i}$ for any $i \neq j$}.$$
+	
+	This proves (a). For (b), suppose $\gcd(S_i) > 1$ and $\gcd(S_j) > 1$. By (a), we have the following two statements:
+	
+	$(*) \quad p_i^{l_i} | \bar{a_i}$, $p_i^{l_i} \not{|}\bar{a_j}$,
+	
+	$(**) \quad p_j^{l_j} | \bar{a_j}$, $p_j^{l_j} \not{|}\bar{a_i}$. 
+	
+	If $p_j = p_i$ then $(*)$ implies $l_i > l_j$ and $(**)$ implies that $l_j > l_i$. This is impossible so $p_i \neq p_j$. 
+	
+	
+\end{proof}
+
+\begin{corollary}\label{equivalentType2}
+	Suppose $S = (a_1, a_2, ..., a_n)$ is normal, let $\sigma \in \Sigma_n$. Let $p_1, p_2, ..., p_k$ be primes, $\alpha_1, ..., \alpha_k \in \Nat$. Consider the following condition
+	\\
+	
+	$(\dagger) \quad p_j^{\alpha_j} |  \overline{\sigma a_j}$ for all $j = 1,2,...,k$ and $p_j^{\alpha_j} \not{|} \overline{\sigma a_{j'}}$ for all $j' \neq j$
+	\\
+	 
+	Then the following are equivalent. 
+	
+	(i) $\type(S) = k$
+	
+	(ii) The following two conditions hold:
+	
+	$\bullet$ For some $\sigma \in \Sigma_n$, there exist $k$ distinct primes $p_1,p_2,...p_k$, integers $p_1^{\alpha_1}, p_2^{\alpha_2},..., p_k^{\alpha_k}$, satisfying $(\dagger)$. 
+	
+	$\bullet$ For every $\sigma \in \Sigma_n$, there exist at most $k$ distinct primes $p_1,p_2,...p_k$, and integers $p_1^{\alpha_1}, p_2^{\alpha_2},..., p_k^{\alpha_k}$, satisfying $(\dagger)$.   
+\end{corollary}
+
+\begin{proof}
+	This follows immediately from Proposition \ref{equivalentType}. 
+\end{proof}
+
+\begin{example} We compute the type of $S= (4,9,6,6)$ in two different ways. First, observe that $\gcd(S_1) = 3, \gcd(S_2) = 2, \gcd(S_3) = \gcd(S_4) = 1$. This shows that $\type(S) = 2$ according to the definition. 
+	
+	To use the method in Corollary \ref{equivalentType2} (ii), observe that $L = 36$ and hence that $\bar{S} = (9,4,6,6) = (3^2, 2^2, 2 \cdot 3, 2 \cdot 3)$. Setting $\sigma = Id, p_1 = 3, \alpha_1 = 2, i_1 = 1$ and $ p_2 = 2, \alpha_2 = 2, i_2 = 2$ satisfies the criterion in Corollary \ref{equivalentType2} (ii) and we cannot find $\sigma \in \Sigma$ and three distinct prime-integer pairs $(q_1, \alpha_1), (q_2, \alpha_2), (q_3,\alpha_3)$ to satisfy $(\dagger)$. So again, $\type(S) = 2$, by Corollary \ref{equivalentType2}.
+	
+	Note that $\type(6,6,9,4) = 2$ as well, however, in this case we choose $\sigma = (13)(24)$ and $p_1,\alpha_2,p_2,\alpha_2$ as above. 
+	
+\end{example}  
+
+\begin{nothing} Let $B = \bk^{[n]} = \bk[X_1,X_2, ..., X_n]$ and suppose $B = \bigoplus\limits_{i \in \Nat} B_i$ is endowed with an $\Nat$-grading $\ggoth$ satisfying the following two conditions: 
+\begin{itemize}
+	\item $B_0 = \bk$
+	\item $\deg(X_i) = d_i \geq 1$ for all $i$.
+\end{itemize}
+
+Then $\ggoth$ is a positive grading of $B = \bigoplus_{i \in \Nat} B_i$. Let $I$ be any homogeneous ideal of $B$ with respect to the grading $\ggoth$. Then $\bar{B} = B/I = \bk[x_1, ..., x_n]$ where $x_i = X_i + I$ is the image of $X_i$ under the canonical quotient homomorphism, and $\bar{B}$ is a graded ring satisfying $\deg(x_i) = d_i$ for each $i = 1, ..., n$. 
+\end{nothing}
+
+Consider now Corollary 4.2 of \cite{daigle:hal-01691491}. 
+
+\begin{proposition} Let $B$ be a $G$-graded $\Rat$-domain, where $G$ is an abelian group. Let $n \geq 2$ and suppose that $x_1$,...,$x_n$ are homogeneous prime elements of $B$ satisfying:
+
+$(i)$ for each subset $I \subset \{1,...,n\}$ of cardinality $n - 1$,
+$\{ \deg(x_i) | i \in I\}$ generates $G(B)$.  
+
+$(ii)$ for any choice of distinct $i,j$, $x_i, x_j$ are not associates.
+
+Then $G(\ker D) = G(B)$ for all $G$-homogeneous $D  \in \lnd(B)$.
+
+\end{proposition}
+
+\section{A result on Type 0 Graded Rings}
+
+We begin with a few definitions and well known results. 
+
+\begin{definition}
+	A field extension $L / \bk$ is \textit{ruled} if there exists a field $K$ such that $\bk \leq K \leq L$ and $L = K^{(1)}$.  
+\end{definition}
+
+\begin{notation} Let $X$ be an integral scheme. We will denote the \textit{function field of $X$} by $\Keul(X)$.
+\end{notation}
+
+\begin{lemma}\label{ffIrrelevant} Let $X = \Proj(B)$. Then $\Keul(X) = \Keul(\Spec B_{(f)})$ for any $f \in B_+$. 
+\end{lemma}
+\begin{proof}
+	This is Proposition 2.5 in Chapter 2 of \cite{Hartshorne}, combined with the fact that the every open affine contains the unique generic point. 
+\end{proof}
+
+\begin{lemma}\label{functionFraction} Let $B$ be an integral domain. Then $\Keul(\Spec B) = \Frac B$. 
+\end{lemma}
+
+We now come to the main result of this section. 
+
+\begin{proposition} \label{mainResult} Let $\bk$ be a field of characteristic zero, $B$ an $\Nat$-graded $\bk$-domain and let $D \in \hlnd B$. Let $A = \ker D$ and suppose that $G(A) = G(B)$. Then the function field of $X = \Proj(B)$ is ruled.
+\end{proposition}
+
+\begin{proof}
+	First assume that $B$ is trivially graded. Then $\Proj B = \Spec B$ and $\Keul(X) = \Keul(\Spec B) = \Frac B = (\Frac A)^{(1)}$. So we may assume that the grading of $B$ is not trivial, and hence that $G(A) = G(B) \neq 0$.  
+	
+	Let $d_D = \deg D$. Since $D$ is nonzero and homogeneous, we may choose a homogeneous local slice $t \in B$. Let $u = D(t)$ and note that $u$ is homogeneous. Let $d_t = \deg(t)$. Let $g = \gcd(d_D,d_t)$. Observe that $d_t,d_D,g \in G(B)$. Now, $G(A) = G(B)$ and so there exist homogeneous $a_1,a_2 \in A$ and natural numbers $m_1,m_2$ such that $m_1\deg(a_1) - m_2\deg(a_2) = g$. It follows that there exist natural numbers $n_1,n_2,o_1,o_2$ such that $n_1\deg(a_1) - n_2 \deg(a_2) = -d_D$ and such that $o_1\deg(a_1) - o_2 \deg(a_2) = -d_t$. 
+	
+	Let $a = ua_1a_2$. Assume without loss of generality that $a$ is an element of the irrelevant ideal of $B$. (If not, replace $a$ by $a' = af$ for some $f$ satisfying $\deg(f) > 0$. Such an $f$ exists since $G(A) = G(B) \neq 0$.) Let $S = \{1, a, a^2, a^3, ... \}$ and observe that $S \subset H \cap A$. By Lemma \ref{homoLoc}, $B_a$ is $\Integ$-graded and the induced derivation of the localized ring $D_a: B_a \to B_a$ is $\Integ$-homogeneous of degree $d$ and is locally nilpotent. Also note that $\frac{1}{u},\frac{1}{a_1}$ and $\frac{1}{a_2} \in B_a$.  
+	
+	Now observe that $\frac{a_1^{n_1}}{a_2^{n_2}} \in \ker D_a$ and so $\frac{a_1^{n_1}}{a_2^{n_2}} D_a \in \hlnd(B_a)$ and has degree 0. Let us denote the degree 0 subring of $B_a$ by $B_{(a)}$. Then $\frac{a_1^{n_1}}{a_2^{n_2}} D_a$ restricts to a locally nilpotent derivation of $B_{(a)}$. Let us denote the restriction of $\frac{a_1^{n_1}}{a_2^{n_2}} D_a$ by $D' : B_{(a)} \to  B_{(a)}$.  
+	
+	We show that $D': B_{(a)} \to B_{(a)}$ has a slice. Indeed $\frac{ta_1^{o_1}}{a_2^{o_2}} \in B_{(a)}$ and $$D'(\frac{ta_1^{o_1}}{a_2^{o_2}}) = \frac{a_1^{o_1}a_1^{n_1}}{a_2^{o_2}a_2^{n_2}}D_a(t) = \frac{a_1^{o_1}a_1^{n_1}u}{a_2^{o_2}a_2^{n_2}} \in B_{(a)}^*.$$ 
+	
+	Now, let $X = \Proj B$. Since $B_{(a)}$ has a slice, we have that $\Keul(X) = \Keul(\Spec B_{(a)}) = \Frac B_{(a)}= K^{(1)}$ where $K = \Frac(\ker D')$. Note that the first equality follows from Lemma \ref{ffIrrelevant} and the fact the $a \in B_+$, the second equality from Lemma \ref{functionFraction} and the third from the fact that $D'$ has a slice. This completes the proof.     
+\end{proof}
+
+The above theorem is particularly useful in answering questions about the rigidity of Pham-Brieskorn varieties, a topic we discuss in the following section. 
+
+\begin{corollary}
+	
+\end{corollary}
+
+\section{A family of semi-rigid rings}
+
+\begin{definition}
+	A ring $B$ is semi-rigid if $ML(B) = \ker D$ for any $D \in \lnd(B) \setminus\{0\}$. 
+\end{definition}
+
+The following results are required. They appear as Corollary 1.26, Lemmas 2.9, 2.10, 2.23 and Theorem 2.24 in \cite{freudenburg2017algebraic}.
+
+\begin{proposition}\label{sliceTheorem}
+	Suppose $D \in \lnd(B)$ has a slice $t$, and let $A = \ker D$. Then,
+	
+	(a) $B = A[t]$
+	
+	(b) $A = \pi_s(B)$ and $\ker \pi_s = sB$
+	
+	(c) If $B$ is affine, then $A$ is affine. 
+	
+\end{proposition}
+
+\begin{lemma} \label{FV2-2.9}
+	Suppose $\bk$ is algebraically closed and $B$ is an affine UFD over $\bk$ with $\trdeg_\bk B = 1$. Then $B \isom_\bk \bk[T]_{f(T)}$ for some $f(T) \in \bk[T]$. If in addition $B^* = \bk^*$, then $B = \bk^{[1]}$. 
+\end{lemma}
+
+
+\begin{lemma}\label{FV2-2.10}
+	Suppose $\bk$ is an algebraically closed field. If $B$ is a UFD over $\bk$ with $\trdeg_\bk B = 2$, then every irreducible element of $\lnd(B)$ has a slice. 
+\end{lemma}
+
+\begin{lemma} \label{rigidLocalization}
+	Let $B$ be an affine $\bk$-domain. 
+	\\
+	
+	(a) If $B$ is rigid, then every localization of $B$ is rigid. 
+	
+	(b) If $B$ is semi-rigid, then every localization of $B$ is semi-rigid. 
+\end{lemma}
+
+\begin{theorem} \label{semirigidityTheorem}
+	If $A$ is a rigid commutative $\bk$-domain of finite transcendence degree over $\bk$, then $A^{[1]}$ is semi-rigid.
+\end{theorem}
+
+We also require the following, originally proved by Zariski. {\red A reference for this can be found as Theorem 1.1 in "A condition for finite generation of the kernel of a derivation" by Kuroda, in the Journal of Algebra 262 (2003) with online reference:
+
+https://www.sciencedirect.com/science/article/pii/S002186930300067X
+}
+
+\begin{lemma}\label{fgkerneldim2}
+	Let $D$ be any $\bk$-derivation of a finitely generated normal domain over $\bk$, and let $A = \ker D$. If $\trdeg_\bk A = 2$, then $\ker D$ is a finitely generated $\bk$-algebra.  
+\end{lemma}
+
+\begin{theorem}\label{trdeg3UFDnotRat}
+	Suppose $\bk$ is algebraically closed of characteristic 0 and $B$ is ring with the following properties:
+	
+	(1) $B$ is a $\bk$-affine $UFD$
+	
+	(2) $B$ is not rational
+	
+	(3) $\trdeg_\bk B = 3$
+	
+	Let $A = \ker D$. Then,
+	
+	(a) $\ker D \not\isom \bk^{[2]}$
+	
+	(b) for every $A \in \klnd(B)$, $A$ is a rigid ring.
+	
+	(c) $B$ is semi-rigid. 
+	
+\end{theorem}
+
+\begin{proof}
+	If $B$ is rigid, the only locally nilpotent derivation is $D = 0$, so $\ker D = B$ is not $\bk^{[2]}$, is rigid, and hence is semi-rigid. So, suppose $B$ is not rigid. Let $D_B \in \lnd(B)$ be nonzero and let $A = \ker D_B$. Then $A$ has transcendence degree 2 over $\bk$, and since $B$ is a UFD, $A$ is also a UFD. 
+	
+	Note first that $A$ is not $\bk^{[2]}$ since in that case, $\Frac(A) = \bk^{(2)}$ and then $\Frac B = (\Frac A)^{(1)} = \bk^{(3)}$ which is impossible since $B$ is not rational. This proves (a).
+	
+	For (b), assume $A$ is not rigid. Since $A$ is a UFD, it follows that $A$ satisfies the ascending chain condition for principal ideals, and since $A$ is not rigid, there exists an irreducible derivation $D_A \in \lnd(A)$. (See Proposition 2.2 of \cite{freudenburg2017algebraic} for instance.) By Lemma \ref{FV2-2.10}, $D_A$ has a slice. It follows that $A = R^{[1]}$ where $R = \ker D_A$. If $R = \bk^{[1]}$ then $A = \bk^{[2]}$ which is impossible by part (a), so $A = R^{[1]}$ where $\trdeg_\bk R = 1$. Now, by Lemma \ref{fgkerneldim2}, $A$ is finitely generated as a $\bk$-algebra. Then, by Proposition \ref{sliceTheorem}, $R$ is also finitely generated as $\bk$-algebra. Then, by Lemma \ref{FV2-2.9}, it follows that $R \isom_\bk \bk[T]_{f(T)}$ and so $\Frac R = \bk(T)$, $\Frac(A) = (\Frac R)^{(1)} = \bk^{(2)}$ and $\Frac B = (\Frac A)^{(1)} = \bk^{(3)}$ which is impossible since $B$ is not rational. It follows that $A$ must be rigid.
+	
+	For (c), note that $B = A_\alpha^{[1]}$ for some $\alpha \in A$. By part (a) of Lemma \ref{rigidLocalization}, we have that $A_\alpha$ is rigid, and by Theorem of \ref{semirigidityTheorem}, $B = A_\alpha^{[1]}$ is semi-rigid.      		
+\end{proof}
+
+\section{Applications to Pham-Brieskorn Varieties}
+
+\begin{definition}
+Let  $B = \Comp[X_1,X_2,...,X_n]/ \lb X_1^{a_1} + ... + X_n^{a_n} \rb$ where $n \geq 3$.  Then $B$ is called a \textit{Pham-Brieskorn ring} and we will denote such a ring by $B_{a_1, ..., a_n}$.  The variety $\Spec B$ is called a \textit{Pham-Brieskorn variety}.
+\end{definition}
+
+Let $V$ be a Pham-Brieskorn $\Comp$-variety defined by the equation $X_1^{a_1} + ... + X_n^{a_n}$. It is conjectured that $V$ is rigid if and only if $a_i = 1$ for some $i$, or if $a_i = a_j = 2$ for some $i \neq j$. This result is known when $n = 3$ (or equivalently when $\dim V = 2$). See Theorem 8.2 of \cite{freudenburg2013} for one direction. The other directly follows from the fact that Danielewski hypersurfaces are not rigid.   
+
+For the balance of this chapter we will show that the above conjecture holds for additional families of Pham-Brieskorn varieties.
+
+\subsection{Some known results}
+
+Let $B = B_{a_1, ..., a_n}$ be the coordinate ring of a Pham-Brieskorn variety.
+
+We have the following result, which appears as Example 2.6 in \cite{almostRigidRings}. 
+
+\begin{theorem}\label{lowSum} If $\sum\limits_{i=1}^n a_i \leq \frac{1}{n-2}$ then $B$ is rigid. 
+\end{theorem} 
+
+We also include the following useful result which is Corollary 4.3 of \cite{freudenburg2013}.
+
+\begin{proposition} \label{rigidDegree2}
+	Suppose $R$ is a $\Integ$-graded affine $\bk$-domain, $f \in R$ is homogeneous,and $n \geq 2$ is an integer not dividing $\deg f$. Set $d = \gcd(n, \deg f)$, and assume that the rings
+	$$ S = R[u]= \lb f + u^d \rb \text{ and } B = R[z]= \lb f + z^n \rb$$
+	are domains. The following are equivalent.
+	
+	$(a) |u|_S \geq 2$
+	
+	$(b) B$ is rigid. 
+\end{proposition}
+
+Assume now that $n=4$ and so $B$ is 3-dimensional. Rather than write $B_{a_1,a_2,a_3,a_4}$, we will write $B_{a,b,c,d}$ or simply $(a,b,c,d)$. The following theorem appears in \cite{LNDsAbelianGroup}.    
+
+\begin{theorem} \label{collection}
+	Let $B = B_{a,b,c,d}$ and assume that $a,b,c,d \geq 2$ are such that at most one among $a,b,c,d$ equals 2. Then $B_{a,b,c,d}$ is rigid in each of the following cases:
+	
+	(a)  $\frac{1}{a} + \frac{1}{b} + \frac{1}{c} + \frac{1}{d} \leq \frac{1}{2}$
+	
+	(b) $\gcd(abc,d) = 1$
+	
+	(c) $(3,3,3,d)$
+	
+	(d) $(2,b,c,d)$, where $b,c,d \geq 3$, $b$ is even, $\gcd(b,c) \geq 3$, $\gcd(d,\lcm(b,c)) = 2$
+	
+	(e) $\type(a,b,c,d) \geq 2$
+\end{theorem}
+
+Part (a) is the application of Theorem \ref{lowSum} with $n=4$. Part (b) is due to {\red Insert reference for (b) }. For part (c), the $(3,3,3,3)$ case is due to Cheltsov, Park and Won and can be found as Corollary 1.9 in \cite{affineCones}; when $(3,d) = 1$ the $(3,3,3,d)$ case follows from (b); when $3|d$, it follows from the $(3,3,3,3)$ case and from Proposition \ref{rigidDegree2}. Part (d) is due to {\red Insert reference for (d)}; (e) is Theorem 7.2 (b) in \cite{LNDsAbelianGroup}.
+
+Note that it is not too hard to generalize Theorem \ref{collection} (e) so that it applies to arbitrary Pham-Brieskorn varieties. 
+
+\begin{corollary}
+	Let $B = B_{a_1,...,a_n}$ be a Pham-Brieskorn variety such that $a_i \neq 1$ for all $i$, and at most one amongst the $a_i = 2$. If $\type(a_1,...,a_n) \geq n-2$, then $B$ is rigid.  
+\end{corollary}
+
+\begin{proof}
+	The $n = 3,4$ cases are discussed above. We will proceed by induction with $n=4$ as our base case. Suppose the result holds for the $n-1$ case. Assume that $B = B_{a_1, ..., a_n}$ and that $\type(B) \geq n-2$. 
+	
+	Let $D \in \lnd(B)$ and assume without loss of generality that $D$ is irreducible. Applying Corollary 6.3(a) of \cite{LNDsAbelianGroup}, (since $\type(B) \geq 2$), there exist $x_i,x_j$ such that $D^2(x_i) = 0 = D^2(x_j)$. By Corollary 6.3(b) of \cite{LNDsAbelianGroup}, it follows that $D(x_i) = 0$ or $D(x_j) = 0$. Without loss of generality, assume $D(x_i) = 0$. Since $D$ is irreducible, $D$ induces a nontrivial locally nilpotent derivation $\bar{D}$ on $B / \lb x_i \rb \isom B_{a_1,...,a_{i-1},a_{i+1},...,a_n} \isom B_{a_1,...,a_m}$ where $m = n-1$ after reindexing. But $\type(B / \lb x_i \rb) \geq m-2$ and so $B / \lb x_i \rb$ is rigid by the induction hypothesis. This contradicts the fact that $\bar{D}$ is nontrivial.        
+\end{proof}
+
+Let $B = B_{a_1, ..., a_n} = \Comp[x_1, ..., x_n]$ be a Pham-Brieskorn ring where each $x_i$ is the image of $X_i$ under the obvious quotient homomorphism from $\Comp[X_1,...,X_n] \to B$. Let $L = \lcm(a_1, ..., a_n)$. Then we can endow $B$ with an $\Nat$-grading by setting $\deg(x_i) = L/a_i$ and thus view $B$ as an $\Nat$-graded ring. As such it makes sense to consider $\Proj B$ as a scheme. 
+
+\begin{remark} It is well-known that when $n \geq 3$, $B$ is an integral domain. Since $B_+ \neq 0$ it follows that $\Proj B$ is an integral scheme.
+\end{remark}
+
+We recall a few facts about the Fermat hypersurfaces. 
+
+\begin{definition} The Fermat hypersurface $F_d$ of degree $d$ in $\PP^{n-1} = \Proj \Comp[X_1, ..., X_n]$ is the projective variety defined by the homogeneous equation $X_1^d + X_2^d + ... + X_n^d$.  
+\end{definition}
+
+\begin{remark} The Fermat hypersurfaces $F_d$ are smooth for all $d \geq 1$ and all $n \geq 2$. 
+\end{remark}
+\begin{remark} \label{notRuled}
+	If $d > n-1$, then $F_d$ is not ruled. In particular, when $d=n$, $F_d$ is a K3 variety, and when $d > n$, $F_d$ is of general type. This can be found in the discussion in Example 8.20.3 in Chapter 2 of \cite{Hartshorne}. 
+\end{remark}	
+
+\begin{theorem} \label{mainResult} Let $B = B_{a_1,a_2,...,a_n}$ be the Pham-Brieskorn variety with $a_1 = a_2 = ... = a_n = d$ where $d \geq n$. Then $B$ is rigid. 
+\end{theorem}
+
+\begin{proof} Observe first that $\type(B) = 0$ and so $\Integ(A) = \Integ(B)$. It follows from Theorem \ref{mainResult} that if $\Proj(B) = F_d$ is not rigid, then $F_d$ is ruled. But by Remark \ref{notRuled}, this is impossible. 
+\end{proof}
+
+We obtain the following Corollary in the 3-dimensional case. 
+
+\begin{corollary}
+	The ring $B_{a,b,c,d}$ is rigid in each of the following cases.
+	\\
+	
+	(a) $(a,a,a,a)$ for $a \geq 3$
+	
+	(b) $(a,a,a,ka)$ for $a \geq 3, k \geq 1$
+\end{corollary}
+\begin{proof}
+	Part (a) is due to Theorem \ref{mainResult} with $n = 4$. Part (b) then follows from $(a)$ and from Proposition \ref{rigidDegree2}. 
+\end{proof}	
+	
+        
+
+
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{bibliography}
+
+
+\end{document}
