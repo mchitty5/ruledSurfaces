@@ -585,7 +585,7 @@ The following Proposition is a special case of Proposition 3.9 in \cite{lndsStru
 	For (c), note that $B = A_\alpha^{[1]}$ for some $\alpha \in A$. By part (a) of Lemma \ref{rigidLocalization}, we have that $A_\alpha$ is rigid, and by Theorem of \ref{semirigidityTheorem}, $B = A_\alpha^{[1]}$ is semi-rigid.      		
 \end{proof}
 
-
+We also state the following result of 
 
 \section{Applications to Pham-Brieskorn Varieties}
 
@@ -597,8 +597,6 @@ Let $V$ be a Pham-Brieskorn $\Comp$-variety defined by the equation $X_1^{a_1} +
 
 For the balance of this chapter we will show that the above conjecture holds for additional families of Pham-Brieskorn varieties.
 
-\subsection{Some known results}
-
 Let $B = B_{a_1, ..., a_n}$ be the coordinate ring of a Pham-Brieskorn variety. We have the following result, which appears as Example 2.6 in \cite{almostRigidRings}. 
 
 \begin{theorem}\label{lowSum} If $\sum\limits_{i=1}^n \frac{1}{a_i} \leq \frac{1}{n-2}$ then $B$ is rigid. 
@@ -608,13 +606,30 @@ We also include the following useful result which is Corollary 4.3 of \cite{freu
 
 \begin{proposition} \label{rigidDegree2}
 	Suppose $R$ is a $\Integ$-graded affine $\bk$-domain, $f \in R$ is homogeneous,and $n \geq 2$ is an integer not dividing $\deg f$. Set $d = \gcd(n, \deg f)$, and assume that the rings
-	$$ S = R[u]= \lb f + u^d \rb \text{ and } B = R[z]= \lb f + z^n \rb$$
+	$$ S = R[u] / \lb f + u^d \rb \text{ and } B = R[z] / \lb f + z^n \rb$$
 	are domains. The following are equivalent.
 	
 	$(a) |u|_S \geq 2$
 	
 	$(b) B$ is rigid. 
 \end{proposition}
+
+\begin{definition}
+	Let $R,S,B,f,d,n$ be as in Proposition \ref{rigidDegree2}. When the assumptions of Proposition \ref{rigidDegree2} are satified, we will say that the ring $S$ is an \textit{$f$-parent} of $B$ and that $B$ is an $f$-child of $S$. If $B_1$ and $B_2$ have the same $f$-parent, we will say that $B_1$ and $B_2$ are \textit{$f$-siblings}.   
+\end{definition}
+
+The above definition allows us to formulate two corollaries which would otherwise have been somewhat cumbersome to state. 
+
+\begin{corollary}
+	Let $R,S,B,f,d,n$ be as in Proposition \ref{rigidDegree2}. 
+	
+	(a) If $S$ is an $f$-parent of $B$ and $S$ is rigid, then $B$ is rigid. 
+	
+	(b) If $B_1$ and $B_2$ are $f$-siblings, then $B_1$ is rigid if and only if $B_2$ is rigid. 
+\end{corollary}
+\begin{proof}
+	Both (a) and (b) follow immediately from Proposition \ref{rigidDegree2}. 
+\end{proof}
 
 Assume now that $n=4$ and so $B$ is 3-dimensional. Rather than write $B_{a_1,a_2,a_3,a_4}$, we will write $B_{a,b,c,d}$ or simply $(a,b,c,d)$. The following theorem appears in \cite{LNDsAbelianGroup}.    
 
@@ -632,7 +647,7 @@ Assume now that $n=4$ and so $B$ is 3-dimensional. Rather than write $B_{a_1,a_2
 	(e) $\type(a,b,c,d) \geq 2$
 \end{theorem}
 
-Part (a) is the application of Theorem \ref{lowSum} with $n=4$. Part (b) is due to {\red Insert reference for (b) }. For part (c), the $(3,3,3,3)$ case is due to Cheltsov, Park and Won and can be found as Corollary 1.9 in \cite{affineCones}; when $(3,d) = 1$ the $(3,3,3,d)$ case follows from (b); when $3|d$, it follows from the $(3,3,3,3)$ case and from Proposition \ref{rigidDegree2}. Part (d) is due to {\red Insert reference for (d)}; (e) is Theorem 7.2 (b) in \cite{LNDsAbelianGroup}.
+Part (a) is the application of Theorem \ref{lowSum} with $n=4$. Part (b) is due to Corollary 4.2 of \cite{freudenburg2013} combined with the fact that $\gcd(\lcm(a,b,c),d) = 1$ if and only if $\gcd(abc,d) = 1$. For part (c), the $(3,3,3,3)$ case is due to Cheltsov, Park and Won and can be found as Corollary 1.9 in \cite{affineCones}; when $(3,d) = 1$ the $(3,3,3,d)$ case follows from (b); when $3|d$, it follows from the $(3,3,3,3)$ case and from Proposition \ref{rigidDegree2}. Part (d) is due to {\red Insert reference for (d)}; (e) is Theorem 7.2 (b) in \cite{LNDsAbelianGroup}.
 
 Note that it is not too hard to generalize Theorem \ref{collection} (e) so that it applies to arbitrary Pham-Brieskorn varieties. 
 
@@ -680,8 +695,13 @@ We obtain the following Corollary in the 3-dimensional case.
 \end{corollary}
 \begin{proof}
 	Part (a) is due to Theorem \ref{mainResult} with $n = 4$. Part (b) then follows from $(a)$ and from Proposition \ref{rigidDegree2}. 
-\end{proof}	
-	
+\end{proof}
+
+
+
+\subsection{Weighted Projective Surfaces} 
+		
+In this subsection, we collect some results about weighted projective surfaces and combine them with Proposition \ref{mainResult} to prove that additional Pham-Brieskorn varieties are rigid. 	
         
 
 
