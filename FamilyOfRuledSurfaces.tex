@@ -344,7 +344,7 @@
 	\end{lemma}
 	
 	\begin{proof}
-		Let $\frac{b_1/s_1}{b_2/s_2} \in \Frac(B_{(S)})$ where $b_1,b_2 \in B$, $s_1,s_2 \in S$ are all homogeneous elements of $B$. Note that $\deg(b_1) = \deg(s_1)$ and $\deg(b_2) = \deg(s_2)$. Since $\frac{b_1/s_1}{b_2/s_2} = \frac{b_1 s_2}{b_2 s_1}$, and $\deg(b_1s_2) = \deg(b_2 s_1)$, we have that $\Frac(B_{(S)}) \subset \HFrac(B)$. Conversely, let $\frac{b_1}{b_2} \in \HFrac(B)$. Since $\setspec{ \deg(s) }{ s \in S}$ generates $G(B)$, there exists $\frac{b}{s} \in S^{-1}B$ such that $\deg(\frac{b}{s}) = -\deg(b_1) = -\deg(b_2)$. Then, $ \frac{b_1}{b_2} = \frac{b_1 b / s}{b_2 b / s} \in \Frac(B_{(S)})$.     
+		Let $\frac{b_1/s_1}{b_2/s_2} \in \Frac(B_{(S)})$ where $b_1,b_2 \in B$, $s_1,s_2 \in S$ are all homogeneous elements of $B$. Note that $\deg(b_1) = \deg(s_1)$ and $\deg(b_2) = \deg(s_2)$. Since $\frac{b_1/s_1}{b_2/s_2} = \frac{b_1 s_2}{b_2 s_1}$, and $\deg(b_1s_2) = \deg(b_2 s_1)$, we have that $\Frac(B_{(S)}) \subset \HFrac(B)$. Conversely, let $\frac{b_1}{b_2} \in \HFrac(B)$. Since $\setspec{ \deg(s) }{ s \in S}$ generates $G(B)$, there exists $\frac{b}{s} \in S^{-1}B$, with $b,s \in S$ such that $\deg(\frac{b}{s}) = -\deg(b_1) = -\deg(b_2)$. Then, $ \frac{b_1}{b_2} = \frac{b_1 b / s}{b_2 b / s} \in \Frac(B_{(S)})$.     
 	\end{proof}
 	
 	\begin{proposition} \label {mainResultGeneralized}
@@ -364,9 +364,9 @@
 			Since $-d \in G(B)$ and $G(A) = G(B)$, there exist
 		$a,s \in S$ such that $\deg(\frac{a}{s}) = -d$.  Since $\frac{a}{s} \in \ker(S^{-1}D)$,
 		it follows that $\frac{a}{s} S^{-1}D$ is a degree 0 homogeneous locally nilpotent derivation of $S^{-1}B$.
-		Let $B_{(S)}$ denote the degree 0 subring of $S^{-1}B$ and let $D_{(S)} : B_{(S)} \to B_{(S)}$ be the restriction of  $\frac{a}{s} S^{-1}D$. Then $D_{(S)}$ is a locally nilpotent derivation whose kernel is $B_{(S)} \cap \ker\big( \frac{a}{s} S^{-1}D \big) = B_{(S)} \cap S^{-1}A = A_{(S)}$.
-		{\cyan You have to check that $D_{(S)} \neq 0$.}
-		So $\Frac B_{(S)} = \big( \Frac A_{(S)} \big)^{(1)}$ by Preliminary (2). Since Lemma \ref{0dfvfb03eFfj} implies that $\HFrac(B) = \Frac B_{(S)}$ and $\HFrac(A) = \Frac A_{(S)}$, we obtain $\HFrac(B) = (\HFrac A)^{(1)}$.
+		Let $B_{(S)}$ denote the degree 0 subring of $S^{-1}B$ and let $D_{(S)} : B_{(S)} \to B_{(S)}$ be the restriction of  $\frac{a}{s} S^{-1}D$. Then $D_{(S)}$ is a locally nilpotent derivation whose kernel is $B_{(S)} \cap \ker\big( \frac{a}{s} S^{-1}D \big) = B_{(S)} \cap S^{-1}A = A_{(S)}$. We show that $D_(S)$ is nonzero. Let $t \in B$ be a homogeneous local slice of $D$. Then since $G(A) = G(B)$ there exists $\frac{a'}{s'} \in \ker S^{-1}D$ with $a \in A, s \in S$ satisfying $\deg(\frac{a'}{s'}) = -\deg(t)$. Then $D_{(S)}(\frac{a't}{s'}) \neq 0$.   
+		
+		It now follows that $\Frac B_{(S)} = \big( \Frac A_{(S)} \big)^{(1)}$ by Preliminary (2). Since Lemma \ref{0dfvfb03eFfj} implies that $\HFrac(B) = \Frac B_{(S)}$ and $\HFrac(A) = \Frac A_{(S)}$, we obtain $\HFrac(B) = (\HFrac A)^{(1)}$.
 		
 		
 		Finally, it is clear that $\bk \cap B_0$ is a field. Moreover $\bk \cap B_0 \subset A \cap B_0 = A_0 \subset \HFrac(A)$. 
